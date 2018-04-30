@@ -8,10 +8,19 @@ The component will then render an appropriate message.
 import React from 'react';
 
 export const Message = (props) => {
+    const gameWinner = props.gamewinner;
+    const gamePlayer = props.playerturn;
+    function myFunct() {
+        if(gameWinner === ""){
+            return "Game is still ongoing, currently " + gamePlayer + "is playing"
+        } else if(gameWinner === "draw"){
+            return "The Game is a draw, please restart the game"
+        } else { return "GameOver" + gameWinner === 'plr1' ? 'Player X Won' : 'Player O Won' }
+    }
+    let render = myFunct();
+    console.log("the result of myFunct", myFunct());
     return (
-        <p className={!this.state.winner === "" ? 'visible' : 'hidden'}>
-            GameOver {this.state.winner === 'plr1' ? 'Player X Won' : 'Player O Won'}
-        </p>
+        <p>{render}</p>
     );
 
 };

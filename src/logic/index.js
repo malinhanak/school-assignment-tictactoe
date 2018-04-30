@@ -31,9 +31,8 @@ The newGame function will return a valid new game object.
 */
 export const newGame = () => ({
   player: 'plr1',
-  winner: null,
-  board: [0,0,0,0,0,0,0,0,0],
-  line: []
+  winner: "",
+  board: [0,0,0,0,0,0,0,0,0]
 });
 
 /*
@@ -46,8 +45,7 @@ It will return a new game object. If the move was invalid
 an unchanged game will be returned.
 */
 
-export const makeMove = (game, pos) => {
-  game = {board: [0,0,0,0,0,0,0,0,0]}
+export const makeMove = (pos) => {
   if(this.state.game.winner !== null) { return; }
   if(this.state.game.board[pos]=== '1' || this.state.game.board[pos]=== '2'){ return; }
   let current = this.state.game.board;

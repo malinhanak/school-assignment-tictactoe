@@ -16,11 +16,10 @@ The tile should render with the classes...
 
 import React from 'react';
 
-export const Tile = (props) => {
-  
+export const Tile = (props, {makeMove}) => {
+  const myClass = "tile";
+  const myClassSecond = props.turn === "plr1" ? "plr1" : "plr2";
   return (
-    <div className={"tile " + this.props.pos + ' '+ this.props.player} onClick={() => this.gamePlay(this.props)}>
-          <p>{this.props.value}</p>
-    </div>
+      <div className={myClass+" "+ props.pos+" "+myClassSecond} onClick={() => {makeMove()}}>{props.value}</div> 
   );
 }
