@@ -11,14 +11,17 @@ export const Message = (props) => {
     const gameWinner = props.gamewinner;
     const gamePlayer = props.playerturn;
     function myFunct() {
-        if(gameWinner === ""){
-            return "Game is still ongoing, currently " + gamePlayer + "is playing"
+        if(gameWinner === "0"){
+            return "Game is still ongoing, currently player" + gamePlayer + ", is playing"
         } else if(gameWinner === "draw"){
             return "The Game is a draw, please restart the game"
-        } else { return "GameOver" + gameWinner === 'plr1' ? 'Player X Won' : 'Player O Won' }
+        } else if(gameWinner === "1"){
+            return "GameOver, player X won!"
+        } else {
+            return "GameOver, player O won!"
+        }
     }
     let render = myFunct();
-    console.log("the result of myFunct", myFunct());
     return (
         <p>{render}</p>
     );

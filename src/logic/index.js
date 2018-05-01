@@ -30,8 +30,8 @@ The board array goes from top left to bottom right. For example, the array
 The newGame function will return a valid new game object.
 */
 export const newGame = () => ({
-  player: 'plr1',
-  winner: "",
+  player: 'x',
+  winner: '0',
   board: [0,0,0,0,0,0,0,0,0]
 });
 
