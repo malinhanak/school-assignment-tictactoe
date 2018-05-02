@@ -13,16 +13,14 @@ A game is an object with...
   - 1: Player 1 has a marker here
   - 2: Player 2 has a marker here
 - line: an array of all positions involved in the win, otherwise empty array (STRETCH TASK)
-
 The board array goes from top left to bottom right. For example, the array
 [0,1,2,1,2,0,1,0,2] represents this board:
-
   .---.---.---.
   |   | 1 | 2 |
   |---+---+---|
-  | 1 | 2 |   |
+  | 1 | 2 |   |
   |---+---+---|
-  | 1 |   | 2 |
+  | 1 |   | 2 |
   '---'---'---'
 */
 
@@ -39,7 +37,6 @@ export const newGame = () => ({
 The makeMove function should be called with...
 - game: A valid game object
 - pos: A number 0-8 corresponding to where we want to play
-
 It will return a new game object. If the move was invalid
 (because the position was already taken or the game is over),
 an unchanged game will be returned.
