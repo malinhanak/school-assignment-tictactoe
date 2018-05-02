@@ -17,10 +17,20 @@ The tile should render with the classes...
 import React from 'react';
 
 export const Tile = (props) => {
-  let plr1Arr = ['tile'];
-  let plr2Arr = ['tile'];
+  let tileOptions;
+
+    switch(props.value){
+        case 1:
+          tileOptions = { className: 'tile plr1', text: 'X' };
+          break;
+        case 2:
+          tileOptions = { className: 'tile plr2', text: 'O' };
+          break;
+        default:
+          tileOptions = { className: 'tile', text: '' };
+          break;
+    }
   return (
-      <div id ={props.pos} className="tile" 
-        onClick={() => props.makeTheMove(props.pos)}>{props.value}</div> 
+    <div className={tileOptions.className} onClick={() => props.makeyourmove()}>{tileOptions.text}</div>
   );
 }
