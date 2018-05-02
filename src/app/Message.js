@@ -10,20 +10,19 @@ import React from 'react';
 export const Message = (props) => {
     const gameWinner = props.gamewinner;
     const gamePlayer = props.playerturn;
-    function myFunct() {
+    let player;
+    if(gamePlayer === 'plr1') { player = 'X'}
+    else { player = 'O' }
+    const render = () => {
         if(gameWinner === "0"){
-            return "Game is still ongoing, currently player" + gamePlayer + ", is playing"
+            return  (<p id="gameStatus">{"THE GAME IS ON."}<br/><span>{"Currently player: "}</span>{player}</p>);
         } else if(gameWinner === "draw"){
-            return "The Game is a draw, please restart the game"
+            return (<p id="gameStatus">{"Draw, restart the game!"}</p>);
         } else if(gameWinner === "plr1"){
-            return "GameOver, player X won!"
+            return (<p id="gameStatus">{"GameOver, player X won!"}</p>);
         } else {
-            return "GameOver, player O won!"
+            return (<p id="gameStatus">{"GameOver, player O won!"}</p>);
         }
     }
-    let render = myFunct();
-    return (
-        <p>{render}</p>
-    );
-
+    return render()
 };

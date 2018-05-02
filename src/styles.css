@@ -15,7 +15,30 @@
   grid-row-gap: 10px;
   margin: 15px;
 }
-
+.head {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+.head > h1 {
+  margin:0 0 2px 0;
+}
+.head > button {
+  padding:1rem;
+  border:none;
+  background-color:indianred;
+  color:white;
+}
+#gameStatus {
+  width:100%;
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  text-align:left;
+  line-height:17px;
+}
+#gameStatus > span {
+  font-weight:bold;
+}
 .tile {
   height: 50px;
   width: 50px;
