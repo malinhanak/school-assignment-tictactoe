@@ -46,5 +46,7 @@ an unchanged game will be returned.
 */
 
 export const makeMove = (pos) => {
-
+  const currentPlayer = game.player === 'plr1' ? 1 : 2;
+    const newBoard = game.board.map((tile, index) => pos === index ? currentPlayer : tile);
+    return {board: newBoard, player: game.player === 'plr1' ? 'plr2' : 'plr1'};
 }
