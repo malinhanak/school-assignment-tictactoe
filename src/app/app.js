@@ -2,7 +2,7 @@ import React from 'react';
 import {makeMove, newGame} from '../logic';
 import { Message } from './Message';
 import { Tile } from './Tile';
-import RestartGame from './RestartGame';
+import { RestartGame } from './RestartGame';
 
 /*
 The main game App! It should have a TicTacToe game state in its component state,
