@@ -17,10 +17,10 @@ The tile should render with the classes...
 import React from 'react';
 
 export const Tile = (props) => {
-  const myClass = "tile";
-  const plr1 = "plr1";
-  const plr2 = "plr2";
+  let plr1Arr = ['tile'];
+  let plr2Arr = ['tile'];
   return (
-      <div id ={props.pos} className={myClass} onClick={() => props.makeTheMove(props.pos)}>{props.value}</div> 
+      <div id ={props.pos} className="tile" 
+        onClick={() => props.makeTheMove(props.pos)}>{props.value}</div> 
   );
 }

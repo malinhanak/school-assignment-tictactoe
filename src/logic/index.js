@@ -46,57 +46,5 @@ an unchanged game will be returned.
 */
 
 export const makeMove = (pos) => {
-  if(this.state.game.winner !== null) { return; }
-  if(this.state.game.board[pos]=== '1' || this.state.game.board[pos]=== '2'){ return; }
-  let current = this.state.game.board;
-    current.splice(pos, 1, this.state.game.player);
-    this.setState({board: current}, function(){
-      let moves = this.state.game.board.join('').replace(/ /g,'0');
-        if(moves.length === 9) { 
-          this.setState({winner: 'draw'}); 
-          return;
-        } else {
-          var topRow = this.state.game.board[0] + this.state.game.board[1] + this.state.game.board[2];
-          if(topRow.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-            }
-          var middleRow = this.state.game.board[3] + this.state.game.board[4] + this.state.game.board[5];
-          if(middleRow.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-          }
-          var bottomRow = this.state.game.board[6] + this.state.game.board[7] + this.state.game.board[8];
-          if(bottomRow.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-          }
-          var leftCol = this.state.game.board[0] + this.state.game.board[3] + this.state.game.board[6];
-          if(leftCol.match(/111|222/)){
-            this.setState({winner: this.state.player});
-            return;
-          }
-          var middleCol = this.state.game.board[1] + this.state.game.board[4] + this.state.game.board[7];
-          if(middleCol.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-          }
-          var rightCol = this.state.game.board[2] + this.state.game.board[5] + this.state.game.board[8];
-          if(rightCol.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-          }
-          var leftDiag = this.state.game.board[0] + this.state.game.board[4] + this.state.game.board[8];
-          if(leftDiag.match(/111|222/)){
-            this.setState({winner: this.state.player});
-            return;
-          }
-          var rightDiag = this.state.game.board[2] + this.state.game.board[4] + this.state.game.board[6];
-          if(rightDiag.match(/111|222/)){
-            this.setState({winner: this.state.game.player});
-            return;
-          }
-          this.setState({player: (this.state.game.player === '1') ? '2' : '1' });
-        }
-      }, this);
+
 }

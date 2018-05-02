@@ -15,7 +15,7 @@ export const Message = (props) => {
             return "Game is still ongoing, currently player" + gamePlayer + ", is playing"
         } else if(gameWinner === "draw"){
             return "The Game is a draw, please restart the game"
-        } else if(gameWinner === "1"){
+        } else if(gameWinner === "x"){
             return "GameOver, player X won!"
         } else {
             return "GameOver, player O won!"

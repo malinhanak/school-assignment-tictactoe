@@ -33,7 +33,7 @@ export default class App extends React.Component {
   };
   makeTheMove = (pos) => {
       if(this.state.winner !== "0") { return; }
-      if(this.state.board[pos] === '1' || this.state.board[pos] === '2'){ return; }
+      if(this.state.board[pos] === 'x' || this.state.board[pos] === 'o'){ return; }
       let current = this.state.board;
         current.splice(pos, 1,this.state.player);
         this.setState({board: current}, () => {
@@ -42,52 +42,52 @@ export default class App extends React.Component {
             this.setState({winner: 'draw'}); 
             return;
           } else {
-            if(this.state.board[0] === "1" && this.state.board[1] === "1" && this.state.board[2] === "1") {
+            if(this.state.board[0] === "x" && this.state.board[1] === "x" && this.state.board[2] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[0] === "2" && this.state.board[1] === "2" && this.state.board[2] === "2") {
+            } else if(this.state.board[0] === "o" && this.state.board[1] === "o" && this.state.board[2] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[3] === "1" && this.state.board[4] === "1" && this.state.board[5] === "1") {
+            if(this.state.board[3] === "x" && this.state.board[4] === "x" && this.state.board[5] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[3] === "2" && this.state.board[4] === "2" && this.state.board[5] === "2") {
+            } else if(this.state.board[3] === "o" && this.state.board[4] === "o" && this.state.board[5] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[6] === "1" && this.state.board[7] === "1" && this.state.board[8] === "1") {
+            if(this.state.board[6] === "x" && this.state.board[7] === "x" && this.state.board[8] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[6] === "2" && this.state.board[7] === "2" && this.state.board[8] === "2") {
+            } else if(this.state.board[6] === "o" && this.state.board[7] === "o" && this.state.board[8] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[0] === "1" && this.state.board[3] === "1" && this.state.board[6] === "1") {
+            if(this.state.board[0] === "x" && this.state.board[3] === "x" && this.state.board[6] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[0] === "2" && this.state.board[3] === "2" && this.state.board[6] === "2") {
+            } else if(this.state.board[0] === "o" && this.state.board[3] === "o" && this.state.board[6] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[1] === "1" && this.state.board[4] === "1" && this.state.board[7] === "1") {
+            if(this.state.board[1] === "x" && this.state.board[4] === "x" && this.state.board[7] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[1] === "2" && this.state.board[4] === "2" && this.state.board[7] === "2") {
+            } else if(this.state.board[1] === "o" && this.state.board[4] === "o" && this.state.board[7] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[2] === "1" && this.state.board[5] === "1" && this.state.board[8] === "1") {
+            if(this.state.board[2] === "x" && this.state.board[5] === "x" && this.state.board[8] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[2] === "2" && this.state.board[5] === "2" && this.state.board[8] === "2") {
+            } else if(this.state.board[2] === "o" && this.state.board[5] === "o" && this.state.board[8] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[0] === "1" && this.state.board[4] === "1" && this.state.board[8] === "1") {
+            if(this.state.board[0] === "x" && this.state.board[4] === "x" && this.state.board[8] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[0] === "2" && this.state.board[4] === "2" && this.state.board[8] === "2") {
+            } else if(this.state.board[0] === "o" && this.state.board[4] === "o" && this.state.board[8] === "o") {
               this.setState({winner: this.state.player});
             }
-            if(this.state.board[2] === "1" && this.state.board[6] === "1" && this.state.board[4] === "1") {
+            if(this.state.board[2] === "x" && this.state.board[6] === "x" && this.state.board[4] === "x") {
               this.setState({winner: this.state.player});
               return;
-            } else if(this.state.board[2] === "2" && this.state.board[6] === "2" && this.state.board[4] === "2") {
+            } else if(this.state.board[2] === "o" && this.state.board[6] === "o" && this.state.board[4] === "o") {
               this.setState({winner: this.state.player});
             }
             this.setState({player: (this.state.player === 'x') ? 'o' : 'x' });
@@ -113,8 +113,8 @@ export default class App extends React.Component {
         <div className="board">
           {
             boardGame.map((value, i) => {
-              let pos = i;
               return ( <Tile 
+                          board={this.state.board}
                           turn={this.state.player}
                           key={i}
                           pos={i}
