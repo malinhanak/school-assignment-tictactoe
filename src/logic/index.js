@@ -43,16 +43,6 @@ It will return a new game object. If the move was invalid
 (because the position was already taken or the game is over),
 an unchanged game will be returned.
 */
-const calculateWinner = (tile) => {
-  const winPatterns = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8],[2,4,6]];
-  for (let i = 0; i < winPatterns.length; i++) {
-    const [a, b, c] = winPatterns[i];
-    if (tile[a] && tile[a] === tile[b] && tile[a] === tile[c]) {
-      return tile[a];
-    }
-  }
-  return null;
-}
 export const makeMove = (game, pos) => {
     const currentPlayer = game.player === 'plr1' ? 1 : 2;
     const newBoard = game.board.map((tile, index) => pos === index ? currentPlayer : tile);
