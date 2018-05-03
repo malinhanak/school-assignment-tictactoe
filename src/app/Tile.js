@@ -31,6 +31,6 @@ export const Tile = (props) => {
           break;
     }
   return (
-    <div className={tileOptions.className} onClick={() => props.makeyourmove()}>{tileOptions.text}</div>
+    <div className={props.win ? `${tileOptions.className} line` : tileOptions.className} onClick={() => props.makeyourmove()}>{tileOptions.text}</div>
   );
 }
