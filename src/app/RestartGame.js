@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class RestartGame extends Component {
-    render() {
-        return (
-            <button onClick={this.props.restart}>Restart the game</button>
-        );
-    }
+export const RestartGame = (props) => {
+   return <button onClick={props.restart}>Restart the game</button>
 }
