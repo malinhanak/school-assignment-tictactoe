@@ -6,7 +6,6 @@ The Tile component expects to be passed
   - 2: plr2 has a piece here
 - callback: a function that it'll call when clicked
 - line: a boolean, true if tile was part of winning line (STRETCH TASK)
-
 The tile should render with the classes...
 - tile: always
 - plr1: if has a plr1 piece
